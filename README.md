@@ -12,6 +12,21 @@ calc foo + bar - car = The clear command instructs your program to forget all of
 
 Output Your program should produce no output for definitions, but for calculations it should produce the value of the calculation. If there is not a word for the result, or some word in the calculation has not been defined, then the result of the calculation should be unknown. The word unknown is never used as a variable in the input.
 
-Sample Input 1 def foo 3 calc foo + bar = def bar 7 def programming 10 calc foo + bar = def is 4 def fun 8 calc programming - is + fun = def fun 1 calc programming - is + fun = clear
+Sample Input 1 
+def foo 3 
+calc foo + bar = 
+def bar 7 
+def programming 10 
+calc foo + bar = 
+def is 4 
+def fun 8 
+calc programming - is + fun = 
+def fun 1 
+calc programming - is + fun = 
+clear
 
-Sample Output 1: foo + bar = unknown foo + bar = programming programming - is + fun = unknown programming - is + fun = bar
+Sample Output 1: 
+foo + bar = unknown 
+foo + bar = programming 
+programming - is + fun = unknown 
+programming - is + fun = bar
