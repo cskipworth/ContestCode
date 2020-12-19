@@ -10,7 +10,9 @@ A definition has the format def x y where x is a variable name and y is a an int
 
 A calculation command starts with the word calc, and is followed by one to 15 more variable names separated by addition or subtraction operators. The end of a calc command is an equals sign. For example:
 
-calc foo + bar - car = The clear command instructs your program to forget all of its definitions.
+calc foo + bar - car = 
+
+The clear command instructs your program to forget all of its definitions.
 
 ### Output 
 Your program should produce no output for definitions, but for calculations it should produce the value of the calculation. If there is not a word for the result, or some word in the calculation has not been defined, then the result of the calculation should be unknown. The word unknown is never used as a variable in the input.
