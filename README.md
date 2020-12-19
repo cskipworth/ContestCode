@@ -17,19 +17,32 @@ Your program should produce no output for definitions, but for calculations it s
 
 ### Sample Input 1 
 def foo 3 
+
 calc foo + bar = 
+
 def bar 7 
+
 def programming 10 
+
 calc foo + bar = 
+
 def is 4 
+
 def fun 8 
+
 calc programming - is + fun = 
+
 def fun 1 
+
 calc programming - is + fun = 
+
 clear
 
 ### Sample Output 1: 
 foo + bar = unknown 
+
 foo + bar = programming 
+
 programming - is + fun = unknown 
+
 programming - is + fun = bar
