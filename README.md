@@ -1,7 +1,5 @@
-# JavaFun
-
 ## Adding Words Problem
-From Kattis: Psychologists at Wassamatta University believe that humans are able to more easily deal with words than with numbers. So they have devised experiments to find out if this is true. In an interesting twist, one of their experiments deals with using words which represent numbers. Rather than adding numbers, they want to add words. You are a research programmer on the project, and your job is to write a program that demonstrates this ability.
+Prompt: Psychologists at Wassamatta University believe that humans are able to more easily deal with words than with numbers. So they have devised experiments to find out if this is true. In an interesting twist, one of their experiments deals with using words which represent numbers. Rather than adding numbers, they want to add words. You are a research programmer on the project, and your job is to write a program that demonstrates this ability.
 
 ### Input 
 Input is a sequence of up to 2000 commands, one per line, ending at end of file. Each command is a definition, a calculation, or a clear. All tokens within a command are separated by single spaces.
@@ -48,3 +46,11 @@ foo + bar = programming
 programming - is + fun = unknown 
 
 programming - is + fun = bar
+
+### Code Algorithm Design
+A two-way map is used to keep track of words and their accompanying numbers. 
+Number values are mapped to word keys in the "dictionary" HashMap and word values are mapped to number keys in the "abacus" HashMap. Words are added to both dictionary and abacus through the "def" command. Then, in the "calc" command, dictionary is referenced to tally the words' numeric values into a total, which is accumulated in an equation-building while loop. abacus is then used to search backwards for a number that matches the result and return that associated word. 
+A series of conditional checks throughout the "calc" code ensure that any word used is present in the dictionary; otherwise, the program will return "...(word equation)... = unknown" after a calc command is called. 
+Progression through input line by line occurs naturally for each command's code: "def" and "clear" code will always have the same amount of input tokens, and "calc" processes its command line token by token in the equation-building while loop that terminates when it reaches the "=" prompt token. 
+Thus, code is processed line after line until there is no next token available in the input. At this point, the command processing code ends, upon which the scanner closes.
+Of course, if a user's scanner is referencing not an input ".txt" file but instead immediately typed System.in input e.g. in the terminal, if desired, the user can "refresh" the mapping in the dictionary and abacus by inputting "clear," which will simply clear all values from both maps.
