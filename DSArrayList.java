@@ -1,5 +1,4 @@
-//This code is a remake of some crucial ArrayList functions in java.
-//Author: In-class collaborative work
+//This code is an in-class, collaborative remake of some crucial ArrayList functions in java.
 
 
 import java.util.Arrays;
@@ -37,10 +36,5 @@ public class DSArrayList<E> {
     }
 
     //Method that adds a value onto end of current items in DSArrayList.
-
-    
-
-
-
      
  }
