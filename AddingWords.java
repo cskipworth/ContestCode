@@ -1,5 +1,7 @@
 //AddingWords problem code file
+//Problem from Kattis: <https://open.kattis.com/problems/addingwords>
 //Author: Clarissa Skipworth
+//Completion date: 12/22/20
 
 import java.util.Scanner;
 import java.util.HashMap;
@@ -13,12 +15,12 @@ public class AddingWords {
         HashMap<String, Integer> dictionary = new HashMap<String, Integer>();
         HashMap<Integer, String> abacus = new HashMap<Integer, String>();
 
-        //Input read and computation per command line
-        while(scanner.hasNextLine()){
+        //Input read and computation chosen per command line
+        while(scanner.hasNext()){
             String token = scanner.next(); 
 
             //Each of these automatically leaves the scanner at the very end of their command line, 
-            //ready to move to the next command token.
+            //ready to move to the next command starting token.
 
             //Definition command
             if(token.equals("def")){
@@ -28,8 +30,9 @@ public class AddingWords {
 
                 //Work
                 if(dictionary.containsKey(var)){
+                    int toCut = dictionary.get(var);
                     dictionary.replace(var, val);
-                    abacus.replace(val, var);
+                    abacus.remove(toCut); 
                 }
                 dictionary.put(var, val);
                 abacus.put(val, var);
@@ -43,25 +46,31 @@ public class AddingWords {
 
             //Calculation command
             if(token.equals("calc")){
-                //Variable initiation
+                //Variables
                 String start = scanner.next();
+                Integer tot = 0; 
                 String equation = start;
                 String answer = "";
-                if(!dictionary.containsKey(start))
+                
+                if(!dictionary.containsKey(start)){
                     answer = "unknown";
-                Integer tot = dictionary.get(start);
+                } else {
+                    tot = dictionary.get(start);
+                }
 
                 String oper = scanner.next();
                 String varS;
-                Integer varV;
+                Integer varV = 0;
 
                 //Work
                 while(!oper.equals("=")){
                     varS = scanner.next();
+                    
                     if(!dictionary.containsKey(varS)){
                         answer = "unknown";
-                    }
+                    } else {
                     varV = dictionary.get(varS);
+                    }
 
                     equation = equation + " " + oper + " " + varS;
 
@@ -76,7 +85,9 @@ public class AddingWords {
 
                 if(!abacus.containsKey(tot)){
                     answer = "unknown";
-                } else { 
+                }
+
+                if(!answer.equals("unknown")){
                     answer = abacus.get(tot);
                 }
 
