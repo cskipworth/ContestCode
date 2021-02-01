@@ -34,7 +34,5 @@ public class DSArrayList<E> {
         a = (E[]) (new Object[initial_size]);
         this.setLength(0);
     }
-
-    //Method that adds a value onto end of current items in DSArrayList.
      
  }
