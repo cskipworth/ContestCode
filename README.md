@@ -7,5 +7,7 @@ All work is either my own or done in collaboration with other students from my u
 ### From Kattis.com:
 
 #### AddingWords problem: https://open.kattis.com/problems/addingwords
-In this Java code solution, I utilize two HashMaps called "abacus" and "dictionary" to convert a number calculator into a word calculator! Follow the link to read more about the prompt.
+This Java code solution utilizes two HashMaps called "abacus" and "dictionary" to convert a number calculator into a word calculator.
 
+#### FlexibleSpaces problem: https://open.kattis.com/contests/naq20open/problems/flexible
+This Python code solution takes in two lines defining the length of a room with optional "wall partitions", calculates the possible room configurations, and returns each room configuration size in ascending order.
