@@ -17,4 +17,3 @@ This Python code solution takes in two lines defining the length of a room with 
 #### SantaKlas problem: https://open.kattis.com/problems/santaklas
 This Java code solution uses some basic trigonometric math to calculate and return whether or not "Santa's sleigh" will hit the ground or not; if it won't, it returns string "safe", and if it will, it returns the distance until the sleigh hits the ground. <br />
 [Go to the solution!](https://github.com/cskipworth/ContestCode/blob/main/SantaKlas.java)
-notest
